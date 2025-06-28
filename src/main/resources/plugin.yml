@@ -1,0 +1,66 @@
+name: RolleritePlugin
+version: 1.0.0
+main: com.rollerite.plugin.RolleritePlugin
+api-version: 1.21
+description: A comprehensive utility plugin with various commands
+
+commands:
+  gamemode:
+    description: Change the game mode of a player
+    usage: /gamemode <type> [player]
+    permission: rollerite.gamemode
+  god:
+    description: Toggle god mode for a player
+    usage: /god [player]
+    permission: rollerite.god
+  openinv:
+    description: Open and edit another player's inventory
+    usage: /openinv <player>
+    permission: rollerite.openinv
+  enderchest:
+    description: Open a player's ender chest
+    usage: /enderchest [player]
+    permission: rollerite.enderchest
+  fix:
+    description: Fully repair the item held in main hand
+    usage: /fix [player]
+    permission: rollerite.fix
+  tpa:
+    description: Send a teleport request to a player
+    usage: /tpa <player>
+    permission: rollerite.tpa
+  tpaccept:
+    description: Accept a teleport request
+    usage: /tpaccept
+    permission: rollerite.tpa
+  tpadeny:
+    description: Deny a teleport request
+    usage: /tpadeny
+    permission: rollerite.tpa
+  trash:
+    description: Open a GUI to drop items
+    usage: /trash
+    permission: rollerite.trash
+
+permissions:
+  rollerite.gamemode:
+    description: Allows changing game modes
+    default: op
+  rollerite.god:
+    description: Allows toggling god mode
+    default: op
+  rollerite.openinv:
+    description: Allows opening other players' inventories
+    default: op
+  rollerite.enderchest:
+    description: Allows opening ender chests
+    default: op
+  rollerite.fix:
+    description: Allows repairing items
+    default: op
+  rollerite.tpa:
+    description: Allows sending teleport requests
+    default: true
+  rollerite.trash:
+    description: Allows using the trash GUI
+    default: true 

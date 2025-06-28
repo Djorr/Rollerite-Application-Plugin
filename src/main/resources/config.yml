@@ -1,0 +1,52 @@
+# Rollerite Plugin Configuration
+
+messages:
+  prefix: "&8[&bRollerite&8] &r"
+  
+  # General messages
+  no-permission: "&cYou don't have permission to use this command!"
+  player-only: "&cThis command can only be used by players!"
+  player-not-found: "&cPlayer '{player}' not found!"
+  console-player-required: "&cYou must specify a player when using this command from console!"
+  
+  # Gamemode messages
+  gamemode-changed: "&aGame mode changed to {gamemode} for {player}!"
+  gamemode-invalid: "&cInvalid game mode! Use: survival, creative, adventure, or spectator"
+  
+  # God mode messages
+  god-enabled: "&aGod mode enabled for {player}!"
+  god-disabled: "&cGod mode disabled for {player}!"
+  
+  # Inventory messages
+  inventory-opened: "&aOpened {player}'s inventory!"
+  enderchest-opened: "&aOpened {player}'s ender chest!"
+  
+  # Fix messages
+  item-repaired: "&aItem repaired for {player}!"
+  item-already-repaired: "&cItem is already at full durability!"
+  no-item: "&cYou must be holding an item to repair!"
+  
+  # TPA messages
+  tpa-sent: "&aTeleport request sent to {player}!"
+  tpa-received: "&a{player} wants to teleport to you! Use /tpaccept or /tpadeny"
+  tpa-accepted: "&aTeleport request accepted! Teleporting..."
+  tpa-denied: "&cTeleport request denied!"
+  tpa-none: "&cNo pending teleport requests!"
+  tpa-expired: "&cTeleport request expired!"
+  tpa-cooldown: "&cYou must wait {time} seconds before sending another teleport request!"
+  
+  # Trash messages
+  trash-opened: "&aTrash GUI opened! Items will be deleted when closed."
+  trash-items-deleted: "&c{count} items have been permanently deleted from the trash!"
+  
+  # Error messages
+  error-occurred: "&cAn error occurred while executing this command!"
+
+settings:
+  # TPA settings
+  tpa-timeout: 60 # seconds
+  tpa-cooldown: 10 # seconds
+  
+  # God mode settings
+  god-hunger: false # Whether god mode prevents hunger loss
+  god-fall-damage: false # Whether god mode prevents fall damage 
