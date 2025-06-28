@@ -1,58 +1,70 @@
 @echo off
-echo ========================================
-echo Rollerite Plugin Build Script
-echo ========================================
+REM UtilityPlugin Build Script for Windows
+REM This script builds the plugin using Maven
+
+echo UtilityPlugin Build Script
+echo ==========================
 echo.
 
-echo Checking Java version...
+REM Check if Maven is installed
+mvn -version >nul 2>&1
+if errorlevel 1 (
+    echo Error: Maven is not installed or not in PATH
+    echo Please install Maven to build the plugin
+    pause
+    exit /b 1
+)
+
+REM Check if Java 17+ is available
+java -version >nul 2>&1
+if errorlevel 1 (
+    echo Error: Java is not installed or not in PATH
+    pause
+    exit /b 1
+)
+
+echo Java version:
 java -version
-if %errorlevel% neq 0 (
-    echo ERROR: Java is not installed or not in PATH
-    pause
-    exit /b 1
-)
-
 echo.
-echo Checking Maven version...
+echo Maven version:
 mvn -version
-if %errorlevel% neq 0 (
-    echo ERROR: Maven is not installed or not in PATH
-    pause
-    exit /b 1
-)
-
 echo.
+
+REM Clean previous builds
 echo Cleaning previous builds...
-mvn clean
+call mvn clean
+if errorlevel 1 (
+    echo Error: Clean failed
+    pause
+    exit /b 1
+)
 
-echo.
+REM Run tests
 echo Running tests...
-mvn test
-if %errorlevel% neq 0 (
-    echo ERROR: Tests failed
+call mvn test
+if errorlevel 1 (
+    echo Error: Tests failed
     pause
     exit /b 1
 )
 
-echo.
+REM Build the plugin
 echo Building plugin...
-mvn package
-if %errorlevel% neq 0 (
-    echo ERROR: Build failed
+call mvn package
+if errorlevel 1 (
+    echo Error: Build failed
     pause
     exit /b 1
 )
 
 echo.
-echo ========================================
-echo Build completed successfully!
-echo ========================================
+echo ✅ Build completed successfully!
 echo.
-echo Plugin JAR file location: target/rollerite-plugin-1.0.0.jar
+echo Plugin JAR file location: target\utility-plugin-1.0.0.jar
 echo.
-echo To install on your server:
-echo 1. Copy the JAR file to your server's plugins/ folder
+echo To install the plugin:
+echo 1. Copy the JAR file to your server's plugins folder
 echo 2. Restart your server
-echo 3. The plugin will generate default configuration files
+echo 3. Configure the plugin via plugins\UtilityPlugin\config.yml
 echo.
 pause 

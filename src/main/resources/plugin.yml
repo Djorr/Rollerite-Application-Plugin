@@ -1,66 +1,86 @@
-name: RolleritePlugin
-version: 1.0.0
-main: com.rollerite.plugin.RolleritePlugin
-api-version: 1.21
-description: A comprehensive utility plugin with various commands
+name: UtilityPlugin
+version: '${project.version}'
+main: com.utility.plugin.UtilityPlugin
+api-version: '1.21'
+authors: [UtilityPlugin Team]
+description: A comprehensive Minecraft utility plugin with modern OOP principles
+website: https://github.com/utility/utility-plugin
+license: MIT
 
 commands:
   gamemode:
-    description: Change the game mode of a player
-    usage: /gamemode <type> [player]
-    permission: rollerite.gamemode
+    description: Change gamemode for yourself or another player
+    usage: /<command> [gamemode] [player]
+    aliases: [gm]
+    permission: utility.gamemode
   god:
-    description: Toggle god mode for a player
-    usage: /god [player]
-    permission: rollerite.god
+    description: Toggle god mode for yourself or another player
+    usage: /<command> [player]
+    permission: utility.god
   openinv:
-    description: Open and edit another player's inventory
-    usage: /openinv <player>
-    permission: rollerite.openinv
+    description: Open another player's inventory
+    usage: /<command> <player>
+    aliases: [invsee, openinventory]
+    permission: utility.openinv
   enderchest:
-    description: Open a player's ender chest
-    usage: /enderchest [player]
-    permission: rollerite.enderchest
+    description: Open another player's ender chest
+    usage: /<command> <player>
+    aliases: [echest, enderchest]
+    permission: utility.enderchest
   fix:
-    description: Fully repair the item held in main hand
-    usage: /fix [player]
-    permission: rollerite.fix
+    description: Repair all items for yourself or another player
+    usage: /<command> [player]
+    aliases: [repair]
+    permission: utility.fix
   tpa:
-    description: Send a teleport request to a player
-    usage: /tpa <player>
-    permission: rollerite.tpa
+    description: Send a teleport request to another player
+    usage: /<command> <player>
+    permission: utility.tpa
   tpaccept:
     description: Accept a teleport request
-    usage: /tpaccept
-    permission: rollerite.tpa
+    usage: /<command>
+    aliases: [tpaccept]
+    permission: utility.tpa
   tpadeny:
     description: Deny a teleport request
-    usage: /tpadeny
-    permission: rollerite.tpa
+    usage: /<command>
+    aliases: [tpadeny]
+    permission: utility.tpa
   trash:
-    description: Open a GUI to drop items
-    usage: /trash
-    permission: rollerite.trash
+    description: Open a trash GUI to delete items
+    usage: /<command>
+    permission: utility.trash
 
 permissions:
-  rollerite.gamemode:
-    description: Allows changing game modes
+  utility.gamemode:
+    description: Allows changing gamemode
     default: op
-  rollerite.god:
+  utility.god:
     description: Allows toggling god mode
     default: op
-  rollerite.openinv:
+  utility.openinv:
     description: Allows opening other players' inventories
     default: op
-  rollerite.enderchest:
-    description: Allows opening ender chests
+  utility.enderchest:
+    description: Allows opening other players' ender chests
     default: op
-  rollerite.fix:
+  utility.fix:
     description: Allows repairing items
     default: op
-  rollerite.tpa:
-    description: Allows sending teleport requests
-    default: true
-  rollerite.trash:
+  utility.tpa:
+    description: Allows using teleport request commands
+    default: op
+  utility.trash:
     description: Allows using the trash GUI
-    default: true 
+    default: op
+  utility.*:
+    description: Gives access to all utility commands
+    default: op
+    children:
+      utility.gamemode: true
+      utility.god: true
+      utility.openinv: true
+      utility.enderchest: true
+      utility.fix: true
+      utility.tpa: true
+      utility.trash: true 

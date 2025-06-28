@@ -1,9 +1,118 @@
 # Changelog
 
-All notable changes to the Rollerite Plugin will be documented in this file.
+All notable changes to the UtilityPlugin will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2024-01-01
+
+### Added
+- Initial release of UtilityPlugin
+- **Gamemode Command** (`/gamemode`)
+  - Change gamemode for yourself or other players
+  - Support for all gamemodes (survival, creative, adventure, spectator)
+  - Tab completion for gamemodes and player names
+  - Permission: `utility.gamemode`
+
+- **God Command** (`/god`)
+  - Toggle god mode for yourself or other players
+  - Configurable hunger and fall damage prevention
+  - Automatic cleanup when players leave
+  - Permission: `utility.god`
+
+- **OpenInv Command** (`/openinv`)
+  - Open another player's inventory
+  - Real-time inventory updates
+  - Tab completion for player names
+  - Permission: `utility.openinv`
+
+- **EnderChest Command** (`/enderchest`)
+  - Open another player's ender chest
+  - Secure storage access
+  - Tab completion for player names
+  - Permission: `utility.enderchest`
+
+- **Fix Command** (`/fix`)
+  - Repair all items for yourself or other players
+  - Repairs main inventory, armor, and offhand items
+  - Tab completion for player names
+  - Permission: `utility.fix`
+
+- **TPA System** (`/tpa`, `/tpaccept`, `/tpadeny`)
+  - Send teleport requests to other players
+  - Accept or deny incoming requests
+  - Configurable timeouts and cooldowns
+  - Self-targeting support
+  - Permission: `utility.tpa`
+
+- **Trash Command** (`/trash`)
+  - Interactive GUI for item deletion
+  - 6-row chest interface with decorative border
+  - Item counting and deletion notifications
+  - Permission: `utility.trash`
+
+### Technical Features
+- **Modern Architecture**
+  - Service-oriented design
+  - Clean separation of concerns
+  - Comprehensive error handling
+  - Professional logging
+
+- **Configuration System**
+  - Fully configurable messages
+  - Customizable settings
+  - Default configuration generation
+  - Hot-reload support
+
+- **Permission System**
+  - Granular permissions for each command
+  - Wildcard permission support
+  - Default permission levels
+  - Permission inheritance
+
+- **Tab Completion**
+  - Intelligent completion for all commands
+  - Permission-aware suggestions
+  - Real-time player list updates
+  - Smart filtering
+
+- **Testing**
+  - Comprehensive unit tests
+  - JUnit 5 and Mockito integration
+  - Test coverage for core services
+  - Automated test execution
+
+### Configuration
+- `config.yml` with all plugin settings
+- Customizable message prefix
+- God mode configuration options
+- TPA timeout and cooldown settings
+- All messages configurable
+
+### Dependencies
+- Minecraft 1.21.5 (Paper API)
+- Java 17+
+- Maven for building
+- JUnit 5 for testing
+- Mockito for mocking
+
+## [Unreleased]
+
+### Planned Features
+- Additional utility commands
+- Enhanced GUI systems
+- Performance optimizations
+- Extended configuration options
+
+### Known Issues
+- None at this time
+
+---
+
+## Contributors
+
+- UtilityPlugin Team - Initial development and architecture
 
 ## [Unreleased]
 
@@ -153,13 +262,6 @@ For issues and questions:
 2. Review the development guide in DEVELOPMENT.md
 3. Search existing issues on GitHub
 4. Create a new issue with detailed information
-
----
-
-## Contributors
-
-- Rollerite Plugin Team - Initial development and architecture
-- Community contributors - Bug reports and feature suggestions
 
 ---
 

@@ -1,46 +1,70 @@
-# Rollerite Plugin Configuration
+# UtilityPlugin Configuration
+# This file contains all configurable settings for the plugin
 
+# Message prefix for all plugin messages
+prefix: "&8[&bUtilityPlugin&8] &r"
+
+# God mode settings
+god:
+  # Whether god mode should prevent hunger
+  hunger: true
+  # Whether god mode should prevent fall damage
+  fall-damage: true
+
+# TPA (Teleport Request) settings
+tpa:
+  # Timeout for TPA requests in seconds
+  timeout: 60
+  # Cooldown between TPA requests in seconds
+  cooldown: 30
+
+# Messages configuration
 messages:
-  prefix: "&8[&bRollerite&8] &r"
-  
   # General messages
   no-permission: "&cYou don't have permission to use this command!"
   player-only: "&cThis command can only be used by players!"
   player-not-found: "&cPlayer '{player}' not found!"
-  console-player-required: "&cYou must specify a player when using this command from console!"
+  invalid-gamemode: "&cInvalid gamemode! Use: survival, creative, adventure, or spectator"
   
-  # Gamemode messages
-  gamemode-changed: "&aGame mode changed to {gamemode} for {player}!"
-  gamemode-invalid: "&cInvalid game mode! Use: survival, creative, adventure, or spectator"
+  # Gamemode command messages
+  gamemode-changed: "&aGamemode changed to {gamemode}!"
+  gamemode-changed-other: "&a{player}'s gamemode changed to {gamemode}!"
   
-  # God mode messages
-  god-enabled: "&aGod mode enabled for {player}!"
-  god-disabled: "&cGod mode disabled for {player}!"
+  # God command messages
+  god-enabled: "&aGod mode enabled!"
+  god-disabled: "&cGod mode disabled!"
+  god-enabled-other: "&aGod mode enabled for {player}!"
+  god-disabled-other: "&cGod mode disabled for {player}!"
   
-  # Inventory messages
-  inventory-opened: "&aOpened {player}'s inventory!"
-  enderchest-opened: "&aOpened {player}'s ender chest!"
+  # OpenInv command messages
+  inventory-opened: "&aOpening {player}'s inventory!"
+  inventory-opened-other: "&a{player} is viewing your inventory!"
   
-  # Fix messages
-  item-repaired: "&aItem repaired for {player}!"
-  item-already-repaired: "&cItem is already at full durability!"
-  no-item: "&cYou must be holding an item to repair!"
+  # EnderChest command messages
+  enderchest-opened: "&aOpening {player}'s ender chest!"
+  enderchest-opened-other: "&a{player} is viewing your ender chest!"
   
-  # TPA messages
+  # Fix command messages
+  items-fixed: "&aAll items have been repaired!"
+  items-fixed-other: "&a{player}'s items have been repaired!"
+  
+  # TPA command messages
   tpa-sent: "&aTeleport request sent to {player}!"
   tpa-received: "&a{player} wants to teleport to you! Use /tpaccept or /tpadeny"
   tpa-accepted: "&aTeleport request accepted! Teleporting..."
+  tpa-accepted-other: "&a{player} accepted your teleport request!"
   tpa-denied: "&cTeleport request denied!"
-  tpa-none: "&cNo pending teleport requests!"
-  tpa-expired: "&cTeleport request expired!"
-  tpa-cooldown: "&cYou must wait {time} seconds before sending another teleport request!"
+  tpa-denied-other: "&c{player} denied your teleport request!"
+  tpa-timeout: "&cTeleport request timed out!"
+  tpa-timeout-other: "&cTeleport request to {player} timed out!"
+  tpa-cooldown: "&cPlease wait {cooldown} seconds before sending another teleport request!"
+  tpa-no-request: "&cYou have no pending teleport requests!"
+  tpa-self: "&cYou cannot send a teleport request to yourself!"
   
-  # Trash messages
-  trash-opened: "&aTrash GUI opened! Items will be deleted when closed."
-  trash-items-deleted: "&c{count} items have been permanently deleted from the trash!"
-  
-  # Error messages
-  error-occurred: "&cAn error occurred while executing this command!"
+  # Trash command messages
+  trash-opened: "&aTrash GUI opened! Items placed here will be permanently deleted."
+  trash-item-deleted: "&cItem deleted from trash!"
+  trash-closed: "&aTrash GUI closed!"
 
 settings:
   # TPA settings
